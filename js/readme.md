@@ -1,13 +1,18 @@
 <!--
  * @Date: 2020-04-11 15:44:24
  * @LastEditors: bhwa233
- * @LastEditTime: 2020-04-11 17:42:11
+ * @LastEditTime: 2020-04-11 17:56:11
+ -->
+<!--
+ * @Date: 2020-04-11 15:44:24
+ * @LastEditors: bhwa233
+ * @LastEditTime: 2020-04-11 17:50:55
  -->
 
 # js
 ## formCheck-mix.js 
 ### 用途
-利用async-validator的表单校验
+利用async-validator的表单校验，解决分页表单的校验
 ### 参数说明
 参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
 ---|---|---|---|---|---
@@ -118,10 +123,30 @@ params | 缓存参数 |Object |yes
     }
 ```
 
+## regexpRules.js
+### 用途
+校验规则整理
+## formatXml.js
+### 用途
+xml格式化
+## download.js
+### 用途
+下载文件
+## numberTransformation.js
+### 用途
+进行数字转换，增加单位
+## browser.js
+### 用途
+判断浏览器类型
+
+
+
+
+
+
 
 
 # filter 自定义过滤器
-
 ## dataFilter.js 数据过滤器
 ### 用途
 用于处理对象数据为null情况下的显示问题
