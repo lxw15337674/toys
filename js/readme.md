@@ -1,11 +1,13 @@
 <!--
  * @Date: 2020-04-11 15:44:24
  * @LastEditors: bhwa233
- * @LastEditTime: 2020-04-11 17:17:42
+ * @LastEditTime: 2020-04-11 17:42:11
  -->
 
 # js
-## formCheck-mix.js 利用async-validator的表单校验 混入对象
+## formCheck-mix.js 
+### 用途
+利用async-validator的表单校验
 ### 参数说明
 参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
 ---|---|---|---|---|---
@@ -14,9 +16,13 @@ rules |  校验规则 | object | yes |  |
 resolve | 校验成功调用 | function | yes |  | 
 reject | 校验失败调用 | function | yes |  | 
 
-## request.js 魔改axios，加了async和防抖、节流、消息提示、错误处理等功能 
 
-##  formReset.js 清空对话框表单数据
+## request.js 
+### 魔改axios，加了async和防抖、节流、消息提示、错误处理等功能 
+
+##  formReset.js
+### 用途
+ 清空对话框表单数据
 ### 特性
 - 利用$options还原表单初始化数据，清空表单校验提示
 ### 参数说明
@@ -29,7 +35,9 @@ formRef | 表单ref | Array | yes |  |
 ### 用法
 - 绑定在el-dialog的@closed方法
 
-## 利用keepalive缓存页面
+## keepAlive-mix
+### 用途
+缓存组件
 ### 特性
 - 利用keepalive的include属性
 ### 用法
@@ -89,7 +97,9 @@ mixins: [keepAlive],
 
 ```
 
-## 页面参数缓存
+## paramCache-mix
+### 用途
+缓存页面参数
 ### 特性
     1.利用mixins、生命周期、sessionStorage
 ### 用法
@@ -107,3 +117,15 @@ params | 缓存参数 |Object |yes
         this.setCache(['detail'],{params:this.params})
     }
 ```
+
+
+
+# filter 自定义过滤器
+
+## dataFilter.js 数据过滤器
+### 用途
+用于处理对象数据为null情况下的显示问题
+
+## dateFIlter.js 时间过滤器
+### 用途
+用于处理后端未转换的时间数据（例如：2019-02-15T08:44:15.000+0000）
