@@ -8,12 +8,12 @@
     <el-button
       v-for="order in orderList"
       :key="order.value"
-      :class="{ 'rank-active': params.orderBy === order.value }"
+      :class="{ 'rank-active': internalParams.orderBy === order.value }"
       @click="rankChange(order.value)"
     >
       {{ order.label }}
-      <template v-if="params.orderBy === order.value">
-        <template v-if="params.dir === 'desc'">
+      <template v-if="internalParams.orderBy === order.value">
+        <template v-if="internalParams.dir === 'desc'">
           <i class="iconfont icon-paixu-jiangxu"></i>
         </template>
         <template v-else>
@@ -41,15 +41,25 @@ export default {
       type: Array
     }
   },
+  computed: {
+    internalParams: {
+      get() {
+        return { ...this.params };
+      },
+      set(val) {
+        this.$emit("changeValue", val);
+      }
+    }
+  },
   methods: {
     rankChange(val) {
-      if (this.params.orderBy === val) {
-        this.params.dir = this.params.dir === "desc" ? "asc" : "desc";
+      if (this.internalParams.orderBy === val) {
+        this.internalParams.dir =
+          this.internalParams.dir === "desc" ? "asc" : "desc";
       } else {
-        this.params.dir = "desc";
+        this.internalParams.dir = "desc";
       }
-      this.params.orderBy = val;
-      this.$emit("changeValue");
+      this.internalParams.orderBy = val;
     }
   }
 };
