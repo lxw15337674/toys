@@ -4,7 +4,7 @@
       * @author lxw-15315
       * @date 2020/3/25
       * @desc
-      * @Params:{param}通过v-model传递，参数对象, {tableData}表格数据。{tableCols}表格列属性，total{}总页数
+      * @param:param[Object]:通过v-model传递，参数对象, tableData[Array]表格数据。tableCols[Array]表格列属性，total[number]总页数
       */
        -->
 
@@ -20,7 +20,9 @@
       v-bind="$attrs"
     >
       <el-table-column label="序号" width="80">
-        <template slot-scope="scope">{{ scope.$index + (params.page - 1) * params.pageSize + 1 }}</template>
+        <template
+          slot-scope="scope"
+        >{{ scope.$index + (internalParams.page - 1) * internalParams.pageSize + 1 }}</template>
       </el-table-column>
       <el-table-column
         v-for="col in tableCols"
@@ -35,9 +37,9 @@
     <el-pagination
       class="mt20 pagination"
       align="right"
-      :current-page="params.page"
-      :page-sizes="[2, 5, 10, 20]"
-      :page-size="params.pageSize"
+      :current-page="internalParams.page"
+      :page-sizes="[5, 10, 20]"
+      :page-size="internalParams.pageSize"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total"
       @size-change="handleSizeChange"
@@ -48,7 +50,6 @@
 
 <script>
 export default {
-  name: "app",
   model: {
     prop: "params",
     event: "changeValue"
@@ -70,40 +71,36 @@ export default {
         return [];
       }
     },
-    total: {}
-  },
-  data() {
-    return {};
+    total: {
+      type: Number
+    }
   },
   computed: {
-    //如果超出最大页数，会回到最后一页
-    maxPage() {
-      let maxPage = Math.ceil(this.total / this.params.pageSize);
-      if (maxPage < 1) {
-        maxPage = 1;
+    internalParams: {
+      get() {
+        return { ...this.params };
+      },
+      set(val) {
+        this.$emit("changeValue", val);
       }
-      return maxPage;
     }
   },
   watch: {
-    params: {
+    internalParams: {
       deep: true,
-      handler(val) {
-        this.$emit("changeValue", val);
-      }
-    },
-    maxPage(val) {
-      if (this.params.page > val) {
-        this.params.page = val;
+      handler(val, oldVal) {
+        if (val.page === oldVal.page) {
+          this.internalParams = { ...this.internalParams, page: 1 };
+        }
       }
     }
   },
   methods: {
     handleSizeChange(val) {
-      this.params.pageSize = val;
+      this.internalParams = { ...this.internalParams, pageSize: val };
     },
     handleCurrentChange(val) {
-      this.params.page = val;
+      this.internalParams = { ...this.internalParams, page: val };
     }
   }
 };
