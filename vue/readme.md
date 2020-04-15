@@ -6,8 +6,6 @@
 
 # vue组件
 ## orderList.vue 排序组件
-### 
-
 ### 例子
 ```
  <order-list v-model="params" :order-list="orderList"></order-list>
@@ -69,4 +67,46 @@ orderList:[
       ],
       // 菜单显隐状态
       menuShow:false
+```
+
+### page-table 带分页的表格
+### 特性
+- 对el-table和el-pagination进行组合封装
+### 例子
+```
+
+ <g-pageTable
+    border
+    v-loading="loading"
+    :total="total"
+    :tableData="tableData"
+    :tableCols="tableCols"
+    v-model="params"
+  >
+    <el-table-column label="操作">
+      <template slot-scope="scope">
+        <el-button type="danger" plain size="mini" @click="deleteOne(scope.row)"
+          >删除
+        </el-button>
+      </template>
+    </el-table-column>
+  </g-pageTable>
+
+# data
+loading: false,
+tableCols: [
+  { prop: 'loginName', label: '用户名' },
+  { prop: 'ipAddress', label: 'ip地址' },
+  { prop: 'status', label: '状态' },
+  { prop: 'loginTime', label: '时间' },
+  { prop: 'msg', label: '详情', width: '150' },
+],
+total: 0,
+params: {
+  page: 1,
+  pageSize: 10,
+  dir: 'desc',
+  field: 'loginTime',
+},
+tableData:[]
 ```
