@@ -78,7 +78,7 @@ export default {
   computed: {
     internalParams: {
       get() {
-        return { ...this.params };
+        return this.params;
       },
       set(val) {
         this.$emit("changeValue", val);
