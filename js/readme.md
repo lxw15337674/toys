@@ -23,7 +23,7 @@ reject | 校验失败调用 | function | yes |  |
 
 
 ## request.js 
-### 魔改axios，加了async和防抖、节流、消息提示、错误处理等功能 
+### 二次axios，加了async和防抖、节流、消息提示、错误处理等功能 
 
 ##  formReset.js
 ### 用途
@@ -140,13 +140,7 @@ xml格式化
 判断浏览器类型
 
 
-
-
-
-
-
-
-# filter 自定义过滤器
+# Vue filter 自定义过滤器
 ## dataFilter.js 数据过滤器
 ### 用途
 用于处理对象数据为null情况下的显示问题
@@ -154,3 +148,9 @@ xml格式化
 ## dateFIlter.js 时间过滤器
 ### 用途
 用于处理后端未转换的时间数据（例如：2019-02-15T08:44:15.000+0000）
+
+## Vue批量导入 batch-import.js
+### 特性
+- 利用webpack的require.context
+### 用途
+导入某个文件夹下全部文件或组件

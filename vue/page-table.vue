@@ -89,7 +89,7 @@ export default {
     internalParams: {
       deep: true,
       handler(val, oldVal) {
-        if (val.page === oldVal.page) {
+        if (val.page === oldVal.page && val.page !== 1) {
           this.internalParams = { ...this.internalParams, page: 1 };
         }
       }

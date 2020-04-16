@@ -110,3 +110,37 @@ params: {
 },
 tableData:[]
 ```
+
+### filter-form.vue 筛选条件组件
+### 例子
+```
+  <g-filter-form v-model="selForm" :filterArray="filterArray"> </g-filter-form>
+    selForm: {
+    userId: '',
+    dateSelect: '',
+    status: '',
+  },
+  filterArray: [
+    { type: 'input', label: '用户名', field: 'userId' },
+    {
+      type: 'select',
+      label: '状态',
+      field: 'status',
+      options: [
+        {
+          label: '正常',
+          value: 0,
+        },
+        {
+          label: '异常',
+          value: 1,
+        },
+      ],
+    },
+    {
+      type: 'date',
+      label: '日期',
+      field: 'dateSelect',
+    },
+  ],
+```
