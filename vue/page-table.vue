@@ -35,7 +35,7 @@
       <slot></slot>
     </el-table>
     <el-pagination
-      class="mt20 pagination"
+      class="pagination"
       align="right"
       :current-page="internalParams.page"
       :page-sizes="[5, 10, 20]"
@@ -78,7 +78,7 @@ export default {
   computed: {
     internalParams: {
       get() {
-        return this.params;
+        return { ...this.params };
       },
       set(val) {
         this.$emit("changeValue", val);
@@ -89,7 +89,7 @@ export default {
     internalParams: {
       deep: true,
       handler(val, oldVal) {
-        if (val.page !== 1 && val.page === oldVal.page) {
+        if (val.page === oldVal.page) {
           this.internalParams = { ...this.internalParams, page: 1 };
         }
       }
@@ -105,4 +105,8 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.pagination {
+  margin-top: 20px;
+}
+</style>
