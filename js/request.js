@@ -7,19 +7,19 @@
 import Axios from 'axios';
 import Vue from 'vue';
 
+
 export default function request() {
     let queue = {};
     /**
      * @ClassName get
      * @Description : get请求封装
-     * @Params: url [string] 请求地址，data[object] 请求参数，
-     * @Params-config: debounce[Boolean]是否防抖
+     * @Params: url [string] 请求地址，data[object] 请求参数， debounce[Boolean]是否防抖
      * @Return :
-     * @Author : l15315 
+     * @Author : l15315 李希望
      * @Date : 2020/4/10 17:24
      */
-    this.get = (url, data, config = { debounce: false }) => {
-        let request = async function () {
+    this.get = async (url, data, config = { debounce: false }) => {
+        async function request() {
             try {
                 let res = await Axios.get(url, { params: data });
                 res = res.data;
@@ -38,19 +38,18 @@ export default function request() {
                     }
                 });
             } catch (err) {
-                console.error(err);
+                console.log(err);
+                return Promise.reject(err);
             }
-        };
+        }
         if (config.debounce) {
             return new Promise((suc, err) => {
                 if (queue[url]) {
                     clearTimeout(queue[url]);
                 }
                 queue[url] = setTimeout(() => {
-                    request()
-                        .then((e) => suc(e))
-                        .catch((e) => err(e));
-                }, 300);
+                    suc(request());
+                }, 500);
             });
         } else {
             return request();
@@ -61,9 +60,9 @@ export default function request() {
      * @ClassName post
      * @Description : post请求封装
      * @Params: url [string] 请求地址，data[object] 请求参数，
-     * @Params-config: notify[Boolean]请求完成后是否弹出提示信息 message[string]自定义提示信息 debounce[Boolean]是否节流
+     * @configParams notify[Boolean]请求完成后是否弹出提示信息 message[string]自定义提示信息 debounce[Boolean]是否节流
      * @Return :
-     * @Author : l15315 
+     * @Author : l15315 李希望
      * @Date : 2020/4/10 17:24
      */
     this.post = (url, data, config = { notify: false, message: '', throttle: false }) => {
