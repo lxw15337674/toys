@@ -150,3 +150,8 @@ reject | 校验失败调用 | function | yes |  |
 - 利用webpack的require.context
 ### 用途
 导入某个文件夹下全部文件或组件
+
+## drag.js 对话框拖动
+### 特性
+- 配合自定义指定，实现el-dialog可拖动
+- 利用h5的draggable属性
