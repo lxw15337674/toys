@@ -112,6 +112,8 @@ tableData:[]
 ```
 
 ### filter-form.vue 筛选条件组件
+### 特性
+- 支持input输入框、select选择框、date日期选择器三种类型。
 ### 例子
 ```
   <g-filter-form v-model="selForm" :filterArray="filterArray"> </g-filter-form>

@@ -1,30 +1,16 @@
-<!--
- * @Date: 2020-04-11 15:44:24
- * @LastEditors: bhwa233
- * @LastEditTime: 2020-04-11 17:56:11
- -->
-<!--
- * @Date: 2020-04-11 15:44:24
- * @LastEditors: bhwa233
- * @LastEditTime: 2020-04-11 17:50:55
- -->
-
 # js
-## formCheck-mix.js 
-### 用途
-利用async-validator的表单校验，解决分页表单的校验
-### 参数说明
-参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
----|---|---|---|---|---
-data | 校验数据 | Array | yes |  | 
-rules |  校验规则 | object | yes |  | 
-resolve | 校验成功调用 | function | yes |  | 
-reject | 校验失败调用 | function | yes |  | 
-
-
 ## request.js 
 ### 二次axios，加了async和防抖、节流、消息提示、错误处理等功能 
-
+## 截取图片
+### 用途
+  将远程的图片用canvas显示出来，进行blob转换，并上传。
+### 用法
+需要在dom上存一个隐藏的canvas元素，
+```
+<canvas id="myCanvas" style="display: none"></canvas>
+```
+### todo
+  待功能拆分。
 ##  formReset.js
 ### 用途
  清空对话框表单数据
@@ -140,12 +126,22 @@ xml格式化
 判断浏览器类型
 
 
-# Vue filter 自定义过滤器
-## dataFilter.js 数据过滤器
+# Vue 
+## formCheck-mix.js 
+### 用途
+利用async-validator的表单校验，解决分页表单的校验
+### 参数说明
+参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
+---|---|---|---|---|---
+data | 校验数据 | Array | yes |  | 
+rules |  校验规则 | object | yes |  | 
+resolve | 校验成功调用 | function | yes |  | 
+reject | 校验失败调用 | function | yes |  | 
+## dataFilter.js filter数据过滤器
 ### 用途
 用于处理对象数据为null情况下的显示问题
 
-## dateFIlter.js 时间过滤器
+## dateFIlter.js filter时间过滤器
 ### 用途
 用于处理后端未转换的时间数据（例如：2019-02-15T08:44:15.000+0000）
 
