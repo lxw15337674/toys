@@ -1,8 +1,8 @@
 /**
- * 下载接口封装
- * @author lj-16076
+ * 下载功能封装
+ * @author lxw-15315
  * @date 2018/11/12
- * @update 2018/11/26 ljj-17773
+ * @update 2018/11/26
  */
 import qs from 'qs';
 import Vue from 'vue';

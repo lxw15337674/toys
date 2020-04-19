@@ -1,3 +1,8 @@
+/*
+ * @Date: 2020-04-19 22:11:04
+ * @LastEditors: bhwa233
+ * @LastEditTime: 2020-04-19 22:18:30
+ */
 /**
  *
  * @author lixiwang l15315
@@ -8,7 +13,7 @@ export default function formatXml(text) {
   text =
     '\n' +
     text
-      .replace(/(<\w+)(\s.*?>)/g, function($0, name, props) {
+      .replace(/(<\w+)(\s.*?>)/g, function ($0, name, props) {
         return name + ' ' + props.replace(/\s+(\w+=)/g, ' $1');
       })
       .replace(/>\s*?</g, '>\n<');
@@ -16,7 +21,7 @@ export default function formatXml(text) {
   //把注释编码
   text = text
     .replace(/\n/g, '\r')
-    .replace(/<!--(.+?)-->/g, function($0, text) {
+    .replace(/<!--(.+?)-->/g, function ($0, text) {
       var ret = '<!--' + escape(text) + '-->';
       //alert(ret);
       return ret;
@@ -26,7 +31,7 @@ export default function formatXml(text) {
   //调整格式
   var rgx = /\n(<(([^\?]).+?)(?:\s|\s*?>|\s*?(\/)>)(?:.*?(?:(?:(\/)>)|(?:<(\/)\2>)))?)/gm;
   var nodeStack = [];
-  var output = text.replace(rgx, function(
+  var output = text.replace(rgx, function (
     $0,
     all,
     name,
@@ -62,7 +67,7 @@ export default function formatXml(text) {
   //把注释还原并解码，调格式
   outputText = outputText
     .replace(/\n/g, '\r')
-    .replace(/(\s*)<!--(.+?)-->/g, function($0, prefix, text) {
+    .replace(/(\s*)<!--(.+?)-->/g, function ($0, prefix, text) {
       //alert(['[',prefix,']=',prefix.length].join(''));
       if (prefix.charAt(0) === '\r') {
         prefix = prefix.substring(1);

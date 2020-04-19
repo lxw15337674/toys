@@ -1,4 +1,4 @@
-clickExampleImg(imgUrl, index) {
+export default function clickExampleImg(imgUrl, index) {
     let that = this;
     this.activeExampleImgIndex = index;
     //处理多次点击图片，发送多个请求的情况
@@ -36,4 +36,4 @@ clickExampleImg(imgUrl, index) {
                 });
         }, 'image/jpeg');
     };
-},
+}
