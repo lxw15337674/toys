@@ -1,6 +1,8 @@
 # 记录一些封装的组件、方法
 ## todo
 - 用[在线IDE](http://jsrun.net/)写一下demo
+- drag.js 增加配置项
+- imgBlob.js 功能拆分
 
 ## css 
 ### basic.css
@@ -179,9 +181,10 @@ tableData:[]
 ### directive 自定义指令
 #### drag.js 对话框拖动
 ##### 特性
-- 配合自定义指定，实现el-dialog可拖动
+- 配合自定义指令，实现el-dialog可拖动、双击全屏、放大缩小
 - 利用h5的draggable属性
-
+##### Demo
+http://jsrun.net/mMfKp
 
 ### mixins 混入方法
 #### formCheck-mix.js  表单校验
@@ -296,7 +299,6 @@ formRef | 表单ref | Array | yes |  |
 ##### 用法
 - 绑定在el-dialog的@closed方法
 
-#### request.js 
-##### 二次axios，加了async和防抖、节流、消息提示、错误处理等功能 
+#### request.js 二次axios，加了async和防抖、节流、消息提示、错误处理等功能 
 
 

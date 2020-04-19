@@ -1,8 +1,30 @@
-import Vue from 'vue';
+/*
+ * @Date: 2020-02-19 14:36:35
+ * @LastEditors: bhwa233
+ * @LastEditTime: 2020-04-19 23:28:19
+ */
 Vue.directive('dialogDrag', {
     inserted(el, binding, vnode, oldVnode) {
         const header = el.querySelector('.el-dialog__header');
         const dialog = el.querySelector('.el-dialog');
+        let isFullScreen = false
+        let currentStyle = {
+            'height': '100VH',
+            'width': '100VW',
+            'marginTop': '0',
+            'marginLeft': '0',
+        }
+        // 双击最大
+        header.ondblclick = (e) => {
+            for (let item in currentStyle) {
+                [currentStyle[item], dialog.style[item]] = [dialog.style[item], currentStyle[item]]
+            }
+            isFullScreen = true;
+        }
+        // 放大
+        dialog.style.resize = 'both';
+        dialog.style.overflow = 'auto';
+        // 拖拽
         header.draggable = true;
         el.ondragenter = (event) => {
             event.preventDefault();
@@ -32,3 +54,16 @@ Vue.directive('dialogDrag', {
         });
     },
 });
+
+new Vue({
+
+    el: "#app",
+    data() {
+        return {
+            dialogVisible: false
+        };
+    },
+    methods: {
+    }
+}
+)
