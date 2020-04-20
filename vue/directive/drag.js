@@ -15,7 +15,7 @@ Vue.directive('dialogDrag', {
             marginLeft: '0',
             resize: 'none',
         };
-        // 双击最大
+        // 双击全屏
         header.ondblclick = (e) => {
             for (let item in currentStyle) {
                 [currentStyle[item], dialog.style[item]] = [dialog.style[item], currentStyle[item]];
