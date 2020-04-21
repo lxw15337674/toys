@@ -23,7 +23,7 @@
   待功能拆分。
 #### regexpRules.js 校验规则整理
 #### typeCheck.js 判断数据类型
-
+#### jsonp.js 封装JSONP
 ## vue
 ### componetns 封装组件
 #### orderList.vue 排序组件
