@@ -5,8 +5,8 @@
  */
 var userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
 var browser = '';
-// 判断是否Opera浏览器
 
+// 判断是否Opera浏览器
 if (userAgent.indexOf('Opera') > -1) {
     browser = 'Opera';
 } else if (userAgent.indexOf('Firefox') > -1) {

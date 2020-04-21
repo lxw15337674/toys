@@ -2,7 +2,6 @@
  * 下载功能封装
  * @author lxw-15315
  * @date 2018/11/12
- * @update 2018/11/26
  */
 import qs from 'qs';
 import Vue from 'vue';
@@ -11,10 +10,10 @@ import Vue from 'vue';
  * 下载文件
  * @param url api路径
  * @param method
- * @param param get参数，没有就写null
- * @param data post参数，没有就写null
+ * @param param? get参数
+ * @param data? post参数
  */
-export function download(url, method, param, data) {
+export function download(url, method, param = null, data = null) {
   var postData = data ? JSON.stringify(data) : JSON.stringify({});
   var url_ = param ? url + '?' + qs.stringify(param) : url;
 

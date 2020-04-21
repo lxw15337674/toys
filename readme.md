@@ -1,7 +1,6 @@
 # 记录一些封装的组件、方法
 ## todo
 - 用[在线IDE](http://jsrun.net/)写一下demo
-- imgBlob.js 功能拆分
 
 ## css 
 ### basic.css
@@ -11,16 +10,12 @@
 #### brower.js 浏览器判断
 #### download.js 下载文件
 #### formatXml.js xml格式化
-#### imgBlob.js 截取图片
+#### imgBlob.js  创建canvas元素，渲染远程图片
 ##### 用途
-  将远程的图片用canvas显示出来，进行blob转换，并上传。
-##### 用法
-需要在dom上存一个隐藏的canvas元素，
-```
-<canvas id="myCanvas" style="display: none"></canvas>
-```
-##### todo
-  待功能拆分。
+ 一般用于上传图片后显示、图片上传服务器
+##### 例子
+  http://jsrun.net/q4fKp/
+
 #### regexpRules.js 校验规则整理
 #### typeCheck.js 判断数据类型
 #### jsonp.js 封装JSONP
