@@ -8,6 +8,7 @@ Vue.directive('dialogDrag', {
     inserted(el, binding, vnode, oldVnode) {
         const header = el.querySelector('.el-dialog__header');
         const dialog = el.querySelector('.el-dialog');
+        // 双击全屏
         let currentStyle = {
             height: '100VH',
             width: '100VW',
@@ -15,7 +16,6 @@ Vue.directive('dialogDrag', {
             marginLeft: '0',
             resize: 'none',
         };
-        // 双击全屏
         header.ondblclick = (e) => {
             for (let item in currentStyle) {
                 [currentStyle[item], dialog.style[item]] = [dialog.style[item], currentStyle[item]];

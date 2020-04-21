@@ -1,7 +1,6 @@
 # 记录一些封装的组件、方法
 ## todo
 - 用[在线IDE](http://jsrun.net/)写一下demo
-- drag.js 增加配置项
 - imgBlob.js 功能拆分
 
 ## css 
@@ -179,7 +178,7 @@ tableData:[]
 
 ####  numberTransformation.js 进行数字转换，增加单位
 ### directive 自定义指令
-#### drag.js 对话框拖动
+#### drag.js el-dialog增强
 ##### 特性
 - 配合自定义指令，实现el-dialog可拖动、双击全屏、放大缩小
 - 利用h5的draggable属性
