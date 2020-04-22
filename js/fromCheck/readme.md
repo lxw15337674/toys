@@ -1,4 +1,4 @@
-# formCheck-mix.js  表单校验
+# 表单校验
 ## 用途
 利用async-validator的表单校验，解决分页表单的校验
 ## 参数说明
