@@ -11,7 +11,7 @@
 ### 参数说明
 参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
 ---|---|---|---|---|---
-formRef | 表单ref | Array | yes |  | 
+formRef | 表单ref | Array、String | yes |  | 
 ### 限制
 -  只能用于单独的el-form组件，因为会清空所有data数据（待后期完善）
 ### 用法
