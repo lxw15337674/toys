@@ -1,11 +1,11 @@
 
 /**
- * @description: 创建canvas元素，渲染远程图片，一般用于上传图片后显示、图片上传服务器
+ * @description: 创建canvas元素，渲染远程图片
  * @param {string} url 图片地址 
  * @return: 返回元素
  */
 
-export default function imgBlob(imgUrl) {
+export default function imgToCanvas(imgUrl) {
     let c = document.createElement('canvas');
     this.imageUrl = imgUrl;
     let img = new Image();
