@@ -7,3 +7,4 @@
 - typeCheck.js 判断数据类型
 - jsonp.js 封装JSONP
 - formCheck 表单校验
+- typeCheck.js 数据类型判断

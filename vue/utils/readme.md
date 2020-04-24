@@ -17,11 +17,6 @@ formRef | 表单ref | Array、String | yes |  |
 ### 用法
 - 绑定在el-dialog的@closed方法
 
-## request.js axios二次封装
-### 特性
-- async封装
-- get方法增加防抖、post方法增加节流
-- 增加消息提示
-- 统一错误处理 
+## axios axios二次封装
 
 

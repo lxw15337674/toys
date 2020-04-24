@@ -1,4 +1,5 @@
 # 封装组件
+
 ## orderList.vue 排序组件
 ### 示例
 ```
@@ -140,4 +141,45 @@ tableData:[]
       field: 'dateSelect',
     },
   ],
+```
+## animated-integer.vue 数字跳动
+### 介绍
+ 数字从0开始加载的动画
+### 限制
+- 需要引用TWEEN.js
+### 示例
+```
+<animated-integer :value="value"></animated-integer>
+```
+## breadcrumb.vue 面包屑
+### 介绍
+根据路由地址匹配层级结构的面包屑
+### 示例
+```
+ <g-breadcrumb></g-breadcrumb>
+```
+
+## redirect.vue  刷新当前页面
+### 介绍
+  利用中间页面，解决vue不能刷新当前页面的限制。
+###  限制
+- 需要配合vue-router
+### 示例
+```
+
+this.$router.push({
+      path: '/redirect/appDetail',
+      query: { id: app.id },
+});
+
+// 配置路由
+ {
+    path: '/redirect/:routeName',
+    name: 'redirect',
+    component: () => import('src/views/redirect.vue'),
+    hidden: true,
+    meta: {
+      auth: false,
+    },
+  },
 ```
