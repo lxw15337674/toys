@@ -3,31 +3,31 @@
  * @author lxw-15315
  * @date 2018/11/12
  */
-import qs from 'qs';
-import Vue from 'vue';
+// import qs from 'qs';
+// import Vue from 'vue';
 
-/**
- * 下载文件
- * @param url api路径
- * @param method
- * @param param? get参数
- * @param data? post参数
- */
-export function download(url, method, param = null, data = null) {
-  var postData = data ? JSON.stringify(data) : JSON.stringify({});
-  var url_ = param ? url + '?' + qs.stringify(param) : url;
+// /**
+//  * 下载文件
+//  * @param url api路径
+//  * @param method
+//  * @param param? get参数
+//  * @param data? post参数
+//  */
+// export function download(url, method, param = null, data = null) {
+//   var postData = data ? JSON.stringify(data) : JSON.stringify({});
+//   var url_ = param ? url + '?' + qs.stringify(param) : url;
 
-  return Vue.prototype.$http({
-    url: url_,
-    method: method,
-    data: postData,
-    responseType: 'blob', // 返回数据的格式，可选值为arraybuffer,blob,document,json,text,stream，默认值为json
-    header: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-  });
-}
+//   return Vue.prototype.$http({
+//     url: url_,
+//     method: method,
+//     data: postData,
+//     responseType: 'blob', // 返回数据的格式，可选值为arraybuffer,blob,document,json,text,stream，默认值为json
+//     header: {
+//       'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+//       'X-Requested-With': 'XMLHttpRequest',
+//     },
+//   });
+// }
 
 // /**
 //  * 导出文件方法
