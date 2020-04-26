@@ -183,3 +183,61 @@ this.$router.push({
     },
   },
 ```
+
+
+
+## horizontal-list.vue 横向列表
+### 介绍
+  可以左右滚动的横向列表
+### 示例
+```
+    <horizontal-list :data="listData"></horizontal-list>
+
+  #data
+     listData: [
+        {
+          title: '小明',
+          icon:
+            'https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top-e3b63a0b1b.png',
+        },
+        {
+          title: '小红',
+          icon:
+            'https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top-e3b63a0b1b.png',
+        },
+        {
+          title: '小明',
+          icon:
+            'https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top-e3b63a0b1b.png',
+        },
+        {
+          title: '小红小红小红小红小红小红小红小红小红小红小红小红',
+          icon:
+            'https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top-e3b63a0b1b.png',
+        },
+        {
+          title: '小明',
+        },
+        {
+          title: '小红',
+          icon:
+            'https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top-e3b63a0b1b.png',
+        },
+      ],
+```
+### demo
+http://jsrun.net/jY2Kp
+
+
+## file-upload.vue  上传组件封装
+### 特性
+  - 增加上传列表，显示速度、百分比。
+  - 增加文件格式、文件大小判断。
+### 示例
+  配置参数
+  参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
+  ---|---|---|---|---|---
+  fileSizeLimit | 文件上传大小限制（以MB为单位） | Number | no |  |  10
+  其他参数参照el-upload，
+### demo
+http://jsrun.net/SY2Kp
