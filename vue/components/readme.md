@@ -241,3 +241,12 @@ http://jsrun.net/jY2Kp
   其他参数参照el-upload，
 ### demo
 http://jsrun.net/SY2Kp
+
+## text-img.vue 
+### 特性
+  - 随机生成颜色
+  - 过滤非汉字
+### 介绍
+  生成4字图片，
+### demo
+http://jsrun.net/kw2Kp
