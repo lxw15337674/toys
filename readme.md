@@ -3,7 +3,8 @@
 - 每个工具方法增加详细介绍，并用[在线IDE](http://jsrun.net/)写demo
 - 优化axios二次封装的代码。
 - 数据跳动组件，写原生方法替代TWEEN.js的引入。
-- 学习下shell，把自动提交脚本改完可以输入commit message。
+- 学习下shell，把自动提交脚本改为可以输入commit message。
+- drag指令，销毁前解除事件绑定。
 ## 目录
 ### css
 1. basic.css 常用样式
