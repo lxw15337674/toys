@@ -73,22 +73,3 @@
 //   }
 // }
 
-// 文件下载
-export function downloadFile(url) {
-  this.$http({
-    method: 'get',
-    url: url,
-    responseType: 'blob'
-  }).then(data => {
-    if (!data) {
-      return;
-    }
-    let url = window.URL.createObjectURL(new Blob([data.data]));
-    let link = document.createElement('a');
-
-    link.style.display = 'none';
-    link.href = url;
-    link.setAttribute('download', row.fileName);
-    link.click();
-  });
-}
