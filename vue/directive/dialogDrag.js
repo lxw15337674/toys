@@ -65,10 +65,10 @@ Vue.directive('dialogDrag', {
                 let y = event.clientY - disY;
                 maxX = window.innerWidth - dialog.scrollWidth;
                 maxY = window.innerHeight - dialog.scrollHeight;
-                x = x < 0 ? 0 : x;
-                x = x > maxX ? maxX : x;
-                y = y < 0 ? 0 : y;
-                y = y > maxY ? maxY : y;
+                x = (x < 0 ? 0 : x);
+                x = (x > maxX ? maxX : x);
+                y = (y < 0 ? 0 : y);
+                y = (y > maxY ? maxY : y);
                 dialog.style.marginLeft = `${x}px`;
                 dialog.style.marginTop = `${y}px`;
             });
