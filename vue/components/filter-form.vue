@@ -1,7 +1,7 @@
 <!--
      /**
       * @name 筛选条件组件
-      * @author lj-16076、lxw-15315
+      * @author lxw-15315
       * @date 2020/3/25
       * @desc
       * @param:
@@ -50,7 +50,7 @@
         v-for="(item, index) in filterArray"
         :key="index"
         :label="item.label"
-        style="margin-right: 20px"
+        style="margin-right: 20px;"
       >
         <el-input
           v-if="item.type === 'input'"
@@ -98,10 +98,10 @@
 </template>
 <script>
 export default {
-  name: 'filter-form',
+  name: "filter-form",
   model: {
-    prop: 'params',
-    event: 'changeParams',
+    prop: "params",
+    event: "changeParams",
   },
   props: {
     // 组件功能配置
@@ -131,30 +131,30 @@ export default {
         },
         shortcuts: [
           {
-            text: '最近一周',
+            text: "最近一周",
             onClick(picker) {
               const end = new Date();
               const start = new Date();
               start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit('pick', [start, end]);
+              picker.$emit("pick", [start, end]);
             },
           },
           {
-            text: '最近一个月',
+            text: "最近一个月",
             onClick(picker) {
               const end = new Date();
               const start = new Date();
               start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-              picker.$emit('pick', [start, end]);
+              picker.$emit("pick", [start, end]);
             },
           },
           {
-            text: '最近三个月',
+            text: "最近三个月",
             onClick(picker) {
               const end = new Date();
               const start = new Date();
               start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-              picker.$emit('pick', [start, end]);
+              picker.$emit("pick", [start, end]);
             },
           },
         ],
@@ -165,7 +165,7 @@ export default {
     internalParams: {
       deep: true,
       handler(val) {
-        this.$emit('changeParams', val);
+        this.$emit("changeParams", val);
       },
     },
   },
