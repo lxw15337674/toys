@@ -2,12 +2,12 @@
 
 ## todo
 
-- 每个工具方法增加详细介绍，并用[在线 IDE](http://jsrun.net/)写 demo
-- 优化 axios 二次封装的代码。
-- 数据跳动组件，写原生方法替代 TWEEN.js 的引入。
-- 学习下 shell，把自动提交脚本改为可以输入 commit message。
-- drag 指令，销毁前解除事件绑定。
-- 骨架屏待完善。
+- [ ] 每个工具方法增加详细介绍，并用[在线 IDE](http://jsrun.net/)写 demo
+- [ ] 优化 axios 二次封装的代码。
+- [ ] 数据跳动组件，写原生方法替代 TWEEN.js 的引入。
+- [x] 学习下 shell，把自动提交脚本改为可以输入 commit message。
+- [ ] drag 指令，销毁前解除事件绑定。
+- [ ] 骨架屏待完善。
 
 ## 目录
 
@@ -63,5 +63,5 @@
 #### utils 工具方法
 
 1. 批量导入
-2. axios 二次封装(待优化)
+2. axios 二次封装
 3. el-dialog 清空对话框表单数据

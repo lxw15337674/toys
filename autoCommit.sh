@@ -1,5 +1,8 @@
 # 实现自动 Commit 和 Push
-git status
 git add .
-git commit -m "auto commit"
+a='auto commit'
+if [  $1 != "" ]; then
+a=$1
+fi
+git commit -m "$a"
 git push origin master
