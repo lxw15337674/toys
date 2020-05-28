@@ -75,13 +75,13 @@ export default {
                         dialog.style.marginTop = `${y}px`;
                     });
                 };
-                if (options.fullscreen) {
+                if (options.fullscreen || true) {
                     fullScreen()
                 }
-                if (options.zoom) {
+                if (options.zoom || true) {
                     zoom()
                 }
-                if (options.drag) {
+                if (options.drag || true) {
                     drag()
                 }
             },
