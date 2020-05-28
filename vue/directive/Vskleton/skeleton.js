@@ -6,8 +6,9 @@ export default {
         el.style.backgroundColor = '#f2f3f5';
         let img = new Image();
         img.src = binding.value;
-        img.onload = function() {
+        img.onload = function () {
           el.style.backgroundImage = `url(${binding.value})`;
+          el.style.backgroundColor = '';
         };
       },
     });
