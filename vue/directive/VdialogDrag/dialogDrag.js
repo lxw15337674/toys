@@ -47,6 +47,7 @@ export default {
 
                 let drag = function () {
                     // 拖拽
+                    header.style.cursor = 'move';
                     header.draggable = true;
                     el.ondragenter = (event) => {
                         event.preventDefault();
