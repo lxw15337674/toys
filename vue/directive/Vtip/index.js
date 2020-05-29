@@ -1,12 +1,10 @@
 import Tip from './tip.js';
 export default {
-  install(Vue, options = {}) {
-    const name = options.directiveName || 'tip';
-    const theme = options.theme || 'dark';
+  install(Vue, options = { directiveName='tip', theme='dark' }) {
     let tip = null;
-    Vue.directive(name, {
+    Vue.directive(options.directiveName, {
       inserted(el, binding, vnode, oldVnode) {
-        let props = { content: binding.value, theme: theme };
+        let props = { content: binding.value, theme: options.theme };
         if (!tip) {
           tip = Tip({ ...props });
           document.body.appendChild(tip.$el);

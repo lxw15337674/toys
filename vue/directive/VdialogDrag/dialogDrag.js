@@ -4,10 +4,8 @@
  * @LastEditTime: 2020-04-19 23:28:19
  */
 export default {
-    install(Vue, options = {}) {
-        const name = options.directiveName || 'drag';
-
-        Vue.directive(name, {
+    install(Vue, options = { directiveName='drag', fullscreen=true, zoom=true, drag=true }) {
+        Vue.directive(options.directiveName, {
             inserted(el, binding, vnode, oldVnode) {
                 const header = el.querySelector('.el-dialog__header');
                 const dialog = el.querySelector('.el-dialog');
@@ -75,13 +73,13 @@ export default {
                         dialog.style.marginTop = `${y}px`;
                     });
                 };
-                if (options.fullscreen || true) {
+                if (options.fullscreen) {
                     fullScreen()
                 }
-                if (options.zoom || true) {
+                if (options.zoom) {
                     zoom()
                 }
-                if (options.drag || true) {
+                if (options.drag) {
                     drag()
                 }
             },
