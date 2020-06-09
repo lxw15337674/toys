@@ -3,7 +3,8 @@
 ## todo
 
 - [ ] 每个工具方法增加详细介绍，并用[在线 IDE](http://jsrun.net/)写 demo
-- [ ] 优化 axios 二次封装的代码。
+- [ ] 优化 axios 二次封装的代码，
+- [ ] axios增加断网处理，
 - [ ] 数据跳动组件，写原生方法替代 TWEEN.js 的引入。
 - [x] 学习下 shell，把自动提交脚本改为可以输入 commit message。
 - [ ] drag 指令，销毁前解除事件绑定。
