@@ -250,3 +250,6 @@ http://jsrun.net/SY2Kp
   生成4字图片，
 ### demo
 http://jsrun.net/kw2Kp
+
+## scroll-card.vue
+### 无缝滚动卡片
