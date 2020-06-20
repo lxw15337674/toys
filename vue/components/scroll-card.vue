@@ -32,13 +32,13 @@ export default {
     //TODO
     scrollDirection: {
       type: Number,
-      default:0
+      default: 0
     }
   },
   computed: {
     cardStyle() {
       return `height:${this.visibleHeight}px`;
-    },
+    }
   },
   data() {
     return {
@@ -60,7 +60,7 @@ export default {
         this.$el.addEventListener("mouseleave", () => {
           this.isHover = false;
         });
-      } 
+      }
     },
     startScroll() {
       let currentStep = 0;
@@ -68,8 +68,8 @@ export default {
       let scrollLeft = 0;
       let vue = this;
       function move() {
-        if (!vue.isHover) {
-          if (scrollTop >= vue.$refs.scrollCard.offsetHeight) {
+        if (!vue.isHover && vue.$refs.scroll) {
+          if (scrollTop >= vue.$refs.scroll.offsetHeight / 2) {
             scrollTop = 0;
           }
           scrollTop++;
@@ -97,6 +97,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.scroll-card
-    overflow hidden
+.scroll-card {
+  overflow: hidden;
+}
 </style>
