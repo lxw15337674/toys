@@ -8,7 +8,7 @@ export default {
           return function(...args) {
             clearTimeout(timer);
             timer = setTimeout(() => {
-              func();
+              func(...args);
             }, wait);
           };
         }
