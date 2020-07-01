@@ -22,6 +22,7 @@
 
 ## demo
 
-```
-    <el-input v-debounce:input:enter="test"></el-input>
+```js
+    <el-input  v-debounce="{ event: 'scroll', handler: handleScroll, wait: 100 }">
+    </el-input>
 ```
