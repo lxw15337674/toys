@@ -20,9 +20,15 @@
 | ------------- | ------ | ------ | -------- | ------ | -------- |
 | directiveName | 指令名 | String | no       |        | debounce |
 
+## 传递参数
+| 参数          | 说明   | 类型   | 是否必填 | 可选值 | 默认值   |
+| ------------- | ------ | ------ | -------- | ------ | -------- |
+| event | 事件名 | String | true       |        |  |
+| handler | 调用函数 | function | true       |        |  |
+| wait | 间隔事件 | number | no       |        | 500 |
 ## demo
 
-```js
+```HTML
     <el-input  v-debounce="{ event: 'scroll', handler: handleScroll, wait: 100 }">
     </el-input>
 ```
