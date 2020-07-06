@@ -47,6 +47,7 @@ export default {
 
                 let drag = function () {
                     // 拖拽
+                    header.style.cursor = 'move';
                     header.draggable = true;
                     el.ondragenter = (event) => {
                         event.preventDefault();
@@ -67,21 +68,21 @@ export default {
                         let y = event.clientY - disY;
                         maxX = window.innerWidth - dialog.scrollWidth;
                         maxY = window.innerHeight - dialog.scrollHeight;
-                        x = x < 0 ? 0 : x;
                         x = x > maxX ? maxX : x;
-                        y = y < 0 ? 0 : y;
+                        x = x > 0 ? x : 0;
                         y = y > maxY ? maxY : y;
+                        y = y > 0 ? y : 0;
                         dialog.style.marginLeft = `${x}px`;
                         dialog.style.marginTop = `${y}px`;
                     });
                 };
-                if (options.fullscreen) {
+                if (options.fullscreen || true) {
                     fullScreen()
                 }
-                if (options.zoom) {
+                if (options.zoom || true) {
                     zoom()
                 }
-                if (options.drag) {
+                if (options.drag || true) {
                     drag()
                 }
             },
