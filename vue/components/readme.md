@@ -235,9 +235,9 @@ http://jsrun.net/jY2Kp
   - 增加文件格式、文件大小判断。
 ### 示例
   配置参数
-  参数 | 说明 | 类型 | 是否必填 | 可选值 | 默认值
-  ---|---|---|---|---|---
-  fileSizeLimit | 文件上传大小限制（以MB为单位） | Number | no |  |  10
+  | 参数          | 说明                           | 类型   | 是否必填 | 可选值 | 默认值 |
+  | ------------- | ------------------------------ | ------ | -------- | ------ | ------ |
+  | fileSizeLimit | 文件上传大小限制（以MB为单位） | Number | no       |        | 10     |
   其他参数参照el-upload，
 ### demo
 http://jsrun.net/SY2Kp
@@ -257,5 +257,6 @@ http://jsrun.net/kw2Kp
 ## virtural-scroll.vue
 ### 虚拟滚动
 
-## back-top.vue
-### 回到顶层
+## back-top.vue 回到顶层
+
+## chart.vue echarts组件封装
