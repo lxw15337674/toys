@@ -15,7 +15,6 @@ export default function request() {
      * @Description : get请求封装
      * @Params: url [string] 请求地址，data[object] 请求参数， debounce[Boolean]是否防抖
      * @Return :
-     * @Author : l15315 李希望
      * @Date : 2020/4/10 17:24
      */
     this.get = async (url, data, config = { debounce: false }) => {
@@ -62,7 +61,6 @@ export default function request() {
      * @Params: url [string] 请求地址，data[object] 请求参数，
      * @configParams notify[Boolean]请求完成后是否弹出提示信息 message[string]自定义提示信息 debounce[Boolean]是否节流
      * @Return :
-     * @Author : l15315 李希望
      * @Date : 2020/4/10 17:24
      */
     this.post = (url, data, config = { notify: false, message: '', throttle: false }) => {
